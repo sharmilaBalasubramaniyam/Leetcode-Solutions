@@ -1,0 +1,25 @@
+class Solution {
+    public int thirdMax(int[] nums) {
+        if(nums.length<=0) return -1;
+
+        long f=Long.MIN_VALUE;
+        long s=Long.MIN_VALUE;
+        long t=Long.MIN_VALUE;
+
+        for(int num:nums){
+            if(num==f||num==s||num==t)
+                continue;
+            if(num>f){
+                t=s;
+                s=f;
+                f=num;
+            }else if(num>s){
+                t=s;
+                s=num;
+            }else if(num>t){
+                t=num;
+            }
+        }
+        return (t==Long.MIN_VALUE)?(int)f:(int)t;
+    }
+}
