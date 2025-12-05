@@ -4,4 +4,3 @@ SELECT x,y,z,CASE
         ELSE 'No'
     END AS triangle
 FROM Triangle;
-
