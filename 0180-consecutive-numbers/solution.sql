@@ -1,6 +1,9 @@
-SELECT DISTINCT A.num AS ConsecutiveNums
-FROM Logs A
-JOIN Logs B ON A.id = B.id - 1
-JOIN Logs C ON B.id = C.id - 1
-WHERE A.num = B.num AND B.num = C.num;
+with cte as (
+    select num,
+    lead(num,1) over() num1,
+    lead(num,2) over() num2
+    from logs
 
+)
+
+select distinct num ConsecutiveNums from cte where (num=num1) and (num=num2)
