@@ -1,4 +1,3 @@
-# Write your MySQL query statement below
 SELECT MAX(num) AS num
 FROM MyNumbers
 WHERE num IN (
@@ -7,4 +6,3 @@ WHERE num IN (
     GROUP BY num
     HAVING COUNT(*) = 1
 );
-
