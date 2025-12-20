@@ -6,5 +6,7 @@ class Solution:
 
             if c in seen:
                 return [seen[c],i]
-            
+                
             seen[num]=i
+            
+            
